@@ -3,8 +3,8 @@ services:
     image: jetbrains/youtrack:${YOUTRACK_IMAGE_TAG:-2025.3.124603}
     container_name: youtrack
     restart: unless-stopped
-    ports:
-      - "8080:8080"
+    expose:
+      - "8080"
     volumes:
       - youtrack_data:/opt/youtrack/data
       - youtrack_conf:/opt/youtrack/conf
