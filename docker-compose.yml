@@ -1,0 +1,23 @@
+services:
+  youtrack:
+    image: jetbrains/youtrack:${YOUTRACK_IMAGE_TAG:-2025.3.124603}
+    container_name: youtrack
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    volumes:
+      - youtrack_data:/opt/youtrack/data
+      - youtrack_conf:/opt/youtrack/conf
+      - youtrack_logs:/opt/youtrack/logs
+      - youtrack_backups:/opt/youtrack/backups
+    environment:
+      - TZ=${TZ:-Europe/Berlin}
+    # Uncomment to tune JVM memory (defaults are usually fine):
+    # - JVM_XMS=${JVM_XMS:-512m}
+    # - JVM_XMX=${JVM_XMX:-2g}
+
+volumes:
+  youtrack_data:
+  youtrack_conf:
+  youtrack_logs:
+  youtrack_backups:

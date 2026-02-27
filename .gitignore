@@ -1,0 +1,13 @@
+# Environment (contains real credentials/config)
+.env
+
+# JetBrains IDE
+.idea/
+
+# Logs
+*.log
+
+# Local backup artefacts
+backups/
+*.tar.gz
+*.zip
